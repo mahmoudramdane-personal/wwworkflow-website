@@ -18,7 +18,7 @@ export default function Hero({ hero }) {
             Apprenez un nouveau workflow de travail en utilisant Rhinoceros et Grasshopper comme outils de base - Restez à jour par rapport à un marché en constante évolution!</p>
             <div className="mt-5 max-w-md mx-auto md:flex justify-center items-center md:mt-8">
 
-              <a href="#discover-more" className="inline-flex items-center font-ibm justify-center h-12 px-6 mr-6 font-semibold py-3 border-transparent text-white bg-black hover:bg-gray">
+<a href="https://tally.so/r/nrYAvN" target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-ibm justify-center h-12 px-6 mr-6 font-semibold py-3 border-transparent text-white bg-black hover:bg-gray">
                 Discover More
               </a>
 

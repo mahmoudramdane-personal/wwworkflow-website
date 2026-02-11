@@ -24,7 +24,7 @@ const TrustUs = () => {
                 <Image
                   src={almaxyra}
                   alt="Almaxyra"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -33,7 +33,7 @@ const TrustUs = () => {
                 <Image
                   src={orangeAtelier}
                   alt="Orange Atelier"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -42,7 +42,7 @@ const TrustUs = () => {
                 <Image
                   src={iaac}
                   alt="IAAC"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -51,7 +51,7 @@ const TrustUs = () => {
                 <Image
                   src={olivium}
                   alt="Olivium"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -60,7 +60,7 @@ const TrustUs = () => {
                 <Image
                   src={artCom}
                   alt="ArtCom"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -69,7 +69,7 @@ const TrustUs = () => {
                 <Image
                   src={hdeuxa}
                   alt="H2A"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
               <a 
@@ -78,7 +78,7 @@ const TrustUs = () => {
                 <Image
                   src={holmarcom}
                   alt="Holmarcom"
-                  className="h-10 w-auto object-contain"
+                  className="h-16 w-auto object-contain"
                 />
               </a>
            </div>
