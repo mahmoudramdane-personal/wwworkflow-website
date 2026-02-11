@@ -10,6 +10,7 @@
 ## Quick Stats
 
 - **Current Version:** 0.1.0
+- **Live URL:** https://www.wwworkflows.com
 - **Framework:** Next.js 12.3.0
 - **Deployment:** Vercel
 - **Last Deployment:** February 11, 2026
@@ -22,8 +23,8 @@
 ### [Unreleased] - Current Sprint
 
 #### Planned
-- [ ] Migrate fully to personal Vercel account
-- [ ] Set up custom domain
+- [x] Migrate fully to personal Vercel account ✅
+- [x] Set up custom domain ✅
 - [ ] Configure all environment variables
 - [ ] Test all integrations (Shopify, Gumroad, Email)
 - [ ] Performance optimization
@@ -31,13 +32,22 @@
 - [ ] Add analytics tracking
 
 #### In Progress
-- [ ] DNS configuration for custom domain
+- [x] DNS configuration for custom domain ✅
 - [ ] Environment variable setup in Vercel
 - [ ] Testing shop functionality
 
 ---
 
 ### February 11, 2026
+
+#### Live Deployment
+- **URL:** https://www.wwworkflows.com
+- **Description:** Successfully deployed to custom domain
+- **Status:** ✅ **LIVE**
+- **Notes:** 
+  - Custom domain configured and pointing to Vercel
+  - SSL certificate auto-provisioned
+  - Site fully accessible
 
 #### Deployed
 - **Commit:** `2d66600`
