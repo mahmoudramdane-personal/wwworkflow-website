@@ -38,7 +38,7 @@ export default function Home({ courses, hero, courseInfo }) {
             <h1 className="sm:text-4xl text-3xl font-bold font-eb mb-4 text-black">Prêt à commencer votre apprentissage ?</h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed font-alt text-base mb-8">Inscrivez-vous dès maintenant et commencez votre parcours dans la conception paramétrique.</p>
             <a 
-              href="https://tally.so/forms/nrYAvN" 
+              href="https://tally.so/r/nrYAvN" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center font-ibm justify-center h-12 px-6 font-semibold py-3 border-transparent text-white bg-black hover:bg-gray mx-auto"
