@@ -1,6 +1,6 @@
 # WWWorkflows Website
 
-A modern e-learning platform for architecture and design workflows, built with Next.js and integrated with Shopify and Gumroad for course sales.
+A modern e-learning platform for architecture and design workflows, built with Next.js.
 
 [![Vercel](https://img.shields.io/badge/Vercel-deployed-success?style=flat&logo=vercel)](https://vercel.com)
 [![Next.js](https://img.shields.io/badge/Next.js-12.3.0-black?style=flat&logo=next.js)](https://nextjs.org/)
@@ -24,8 +24,6 @@ A modern e-learning platform for architecture and design workflows, built with N
 WWWorkflows is an educational platform offering courses in architectural design workflows, particularly focused on Grasshopper and parametric design. The website features:
 
 - Course catalog and detailed course pages
-- E-commerce functionality via Shopify integration
-- Additional product sales via Gumroad
 - Contact forms with email integration
 - Blog section
 - Responsive design with Tailwind CSS
@@ -38,8 +36,6 @@ WWWorkflows is an educational platform offering courses in architectural design 
 
 ### Core Features
 - 🎓 **Course Catalog** - Browse and view detailed course information
-- 🛒 **Shopify Integration** - Full e-commerce functionality with cart and checkout
-- 📦 **Gumroad Integration** - Alternative product sales platform
 - 📧 **Contact Forms** - Email integration via Nodemailer
 - 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
 - 🎨 **Animations** - Smooth animations with Framer Motion and GSAP
@@ -128,32 +124,12 @@ Create a `.env.local` file in the root directory with the following variables:
 ### Required Variables
 
 ```env
-# Shopify Configuration
-SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
-SHOPIFY_STOREFRONT_ACCESSTOKEN=your_storefront_access_token
-
-# Gumroad Configuration (for /shop page)
-ACCESS_TOKEN=your_gumroad_access_token
-APPLICATION_ID=your_gumroad_app_id
-APPLICATION_SECRET=your_gumroad_app_secret
-
 # Email Configuration (Contact Form)
 EMAIL_ADDRESS=your_email@gmail.com
 APP_PASSWORD=your_gmail_app_password
 ```
 
 ### How to Obtain These Credentials
-
-#### Shopify
-1. Go to your Shopify Admin → Settings → Apps and sales channels
-2. Click "Develop apps" → "Create an app"
-3. Enable Storefront API access
-4. Copy the Storefront access token
-
-#### Gumroad
-1. Go to [Gumroad Settings](https://app.gumroad.com/settings)
-2. Navigate to "Advanced" tab
-3. Generate API credentials
 
 #### Gmail App Password
 1. Go to Google Account → Security
@@ -184,7 +160,6 @@ wwworkflow-website/
 │   └── shopContext.js       # Shopping cart state management
 │
 ├── lib/
-│   ├── shopify.js           # Shopify API functions
 │   ├── Data.js              # Data utilities
 │   └── contactApi.js        # Contact form API
 │
@@ -193,13 +168,11 @@ wwworkflow-website/
 │   ├── index.js             # Homepage
 │   ├── courses.js           # Courses listing
 │   ├── course.js            # Individual course page
-│   ├── shop.js              # Shopify/Gumroad shop
+│   ├── shop.js              # Shop page (Coming Soon)
 │   ├── blog.js              # Blog page
 │   ├── contact.js           # Contact page
 │   ├── login.js             # Login page
 │   └── api/                 # API routes
-│       ├── available.js     # Shopify product availability
-│       ├── gumroad.js       # Gumroad products
 │       ├── send-mail.js     # Contact form handler
 │       └── ...
 │
@@ -266,24 +239,6 @@ wwworkflow-website/
 
 ## API Integration
 
-### Shopify
-The site uses Shopify Storefront API for:
-- Fetching products and collections
-- Creating checkout sessions
-- Managing cart state
-
-**Key files:**
-- `lib/shopify.js` - API functions
-- `context/shopContext.js` - Cart state management
-- `pages/api/available.js` - Product availability check
-
-### Gumroad
-Used for selling digital products and courses.
-
-**Key files:**
-- `pages/api/gumroad.js` - Gumroad API functions
-- `pages/shop.js` - Shop page (includes error handling for missing env vars)
-
 ### Email
 Contact form uses Nodemailer with Gmail SMTP.
 
@@ -295,21 +250,11 @@ Contact form uses Nodemailer with Gmail SMTP.
 
 ### Common Issues
 
-#### Build Error: "SyntaxError: Unexpected end of JSON input"
-**Cause:** `/shop` page trying to fetch Gumroad API without environment variables
-**Solution:** Add Gumroad environment variables OR the page now handles this gracefully (returns empty array)
-
 #### Images Not Loading
 **Cause:** Missing image files or incorrect paths
 **Solution:** 
 - Ensure images are in `public/` or `assets/` directories
 - Use correct relative paths in components
-
-#### Shopify Products Not Loading
-**Cause:** Invalid credentials or Storefront API not enabled
-**Solution:**
-- Verify `SHOPIFY_STORE_DOMAIN` and `SHOPIFY_STOREFRONT_ACCESSTOKEN`
-- Check Storefront API permissions in Shopify Admin
 
 #### Contact Form Not Sending
 **Cause:** Gmail authentication issues

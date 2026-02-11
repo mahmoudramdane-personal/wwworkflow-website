@@ -99,7 +99,7 @@ const CoursePageContent = ({ courses }) => {
 
 
                   <button className='font-ibm font-semibold my-5 w-full h-14 px-6 text-white bg-black hover:bg-gray' >
-                     <Link href='/contact' >Pré-Commander</Link>
+                     Coming Soon
                   </button>
                </div>
             </div>

@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import ShopProvider from '../context/shopContext'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 
 
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
         <Script async src="https://cdn.splitbee.io/sb.js" ></Script>
 
           <Component {...pageProps} key={router.asPath} />
+          <Analytics />
         </Layout>
     </ShopProvider>
 

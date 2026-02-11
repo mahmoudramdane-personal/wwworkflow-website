@@ -45,10 +45,6 @@ export default function Footer() {
                 <Link href="/blog" className="text-white"
                 >Blog</Link>
               </p>
-              <p className="font-alt ">
-                <Link href="/contact" className="text-white"
-                >Contact</Link>
-              </p>
             </div>
             <div>
               <h5

@@ -25,16 +25,17 @@
 #### Planned
 - [x] Migrate fully to personal Vercel account ✅
 - [x] Set up custom domain ✅
-- [ ] Configure all environment variables
-- [ ] Test all integrations (Shopify, Gumroad, Email)
+- [x] Remove Shopify and Gumroad integrations ✅
+- [ ] Configure email environment variables
+- [ ] Test contact form
 - [ ] Performance optimization
 - [ ] SEO improvements
 - [ ] Add analytics tracking
 
 #### In Progress
 - [x] DNS configuration for custom domain ✅
-- [ ] Environment variable setup in Vercel
-- [ ] Testing shop functionality
+- [ ] Environment variable setup in Vercel (Email only)
+- [ ] Testing contact form functionality
 
 ---
 
@@ -78,8 +79,6 @@
 - Cloned repository from original source
 - Analyzed codebase structure
 - Identified integration points:
-  - Shopify Storefront API
-  - Gumroad API
   - Nodemailer for contact forms
 - **Status:** ✅ Complete
 
