@@ -3,7 +3,7 @@
 A modern e-learning platform for architecture and design workflows, built with Next.js.
 
 [![Vercel](https://img.shields.io/badge/Vercel-deployed-success?style=flat&logo=vercel)](https://vercel.com)
-[![Next.js](https://img.shields.io/badge/Next.js-12.3.0-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.0-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)](https://reactjs.org/)
 
 ## Table of Contents
@@ -28,7 +28,7 @@ WWWorkflows is an educational platform offering courses in architectural design 
 - Blog section
 - Responsive design with Tailwind CSS
 
-**Live Site:** [flowdraft.vercel.app](https://flowdraft.vercel.app) *(Update with your domain)*
+**Live Site:** [www.wwworkflows.com](https://www.wwworkflows.com)
 
 **Repository:** https://github.com/mahmoudramdane-personal/wwworkflow-website
 
@@ -36,35 +36,35 @@ WWWorkflows is an educational platform offering courses in architectural design 
 
 ### Core Features
 - 🎓 **Course Catalog** - Browse and view detailed course information
-- 📧 **Contact Forms** - Email integration via Nodemailer
 - 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
 - 🎨 **Animations** - Smooth animations with Framer Motion and GSAP
-- 🔍 **SEO Optimized** - Meta tags and Open Graph support
+- 🔍 **SEO Optimized** - Meta tags, Open Graph, sitemap.xml, robots.txt
+- ♿ **Accessible** - WCAG compliant with skip links and ARIA labels
+- 📊 **Analytics** - Vercel Analytics integration
 
 ### Additional Features
 - 📰 Blog section for articles and updates
 - 💬 Testimonials carousel
 - 🤝 Client logos/trust badges
-- 📅 Calendly integration for bookings
+- ❓ FAQ section with accordion
 - 🖼️ Image optimization with Next.js Image component
 - ⚡ Fast page loads with static generation
+- 🎯 Reduced motion support for accessibility
 
 ## Tech Stack
 
 ### Frontend
-- **Framework:** Next.js 12.3.0 (Pages Router)
+- **Framework:** Next.js 14.2.0 (Pages Router)
 - **UI Library:** React 18.2.0
 - **Styling:** Tailwind CSS 3.1.8 + Chakra UI 2.5.1
 - **Animations:** Framer Motion 10.0.1, GSAP 3.8.0
 - **Icons:** Heroicons React
 - **Carousel:** Swiper 8.4.7
+- **Analytics:** Vercel Analytics
 
-### Backend & APIs
+### Backend
 - **API Routes:** Next.js API Routes
-- **E-commerce:** Shopify Storefront API
-- **Digital Products:** Gumroad API
-- **Email:** Nodemailer with Gmail
-- **Form Handling:** EmailJS
+- **Forms:** Tally.so integration
 
 ### Build Tools
 - **Bundler:** Next.js built-in
@@ -123,19 +123,10 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ### Required Variables
 
-```env
-# Email Configuration (Contact Form)
-EMAIL_ADDRESS=your_email@gmail.com
-APP_PASSWORD=your_gmail_app_password
-```
-
-### How to Obtain These Credentials
-
-#### Gmail App Password
-1. Go to Google Account → Security
-2. Enable 2-Step Verification
-3. Generate an App Password for "Mail"
-4. Use this password in `APP_PASSWORD`
+No environment variables required for basic functionality. The site uses:
+- Tally.so for form submissions
+- Static JSON data for courses
+- Vercel Analytics (auto-configured)
 
 ## Project Structure
 
@@ -256,7 +247,11 @@ Contact form uses Nodemailer with Gmail SMTP.
 - Ensure images are in `public/` or `assets/` directories
 - Use correct relative paths in components
 
-#### Contact Form Not Sending
+#### Animations Too Slow on Mobile
+**Cause:** Heavy Framer Motion animations
+**Solution:**
+- The site now detects `prefers-reduced-motion` automatically
+- Animations are disabled for users who prefer reduced motion
 **Cause:** Gmail authentication issues
 **Solution:**
 - Use App Password (not regular password)
