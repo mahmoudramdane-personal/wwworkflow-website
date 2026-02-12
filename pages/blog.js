@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Script from 'next/script'
 import BlogCard from '../components/BlogCard'
 import { PageWrapper } from '../utils/page-wrapper';
@@ -9,9 +10,14 @@ const blog = () => {
 
 
   return (
-    // <div><iframe src="https://macad.speckle.xyz/embed?stream=6928630d02&commit=449d11214e&transparent=true&autoload=true&hidecontrols=true&hidesidebar=true&commentslideshow=true" width="600" height="400" frameborder="0"></iframe></div>
-
     <>
+      <Head>
+        <title>Blog | Afterwork Workflow</title>
+        <meta name="description" content="Articles et ressources sur l'architecture paramétrique, la conception computationnelle et les workflows innovants." />
+        <meta property="og:title" content="Blog | Afterwork Workflow" />
+        <meta property="og:description" content="Articles et ressources sur l'architecture paramétrique et la conception computationnelle." />
+        <link rel="canonical" href="https://www.wwworkflows.com/blog" />
+      </Head>
 
 
 

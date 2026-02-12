@@ -1,17 +1,25 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 
-export const PageWrapper = ({ children }) => (
-   <>
-      <AnimatePresence>
-         <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exist={{ opacity: 0, y: 15 }}
-            transition={{ delay: 0.5 }}
-         >
-            {children}
-         </motion.div>
-      </AnimatePresence>
-   </>
-)
+export const PageWrapper = ({ children }) => {
+   const shouldReduceMotion = useReducedMotion();
+   
+   if (shouldReduceMotion) {
+      return <>{children}</>;
+   }
+   
+   return (
+      <>
+         <AnimatePresence>
+            <motion.div
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0 }}
+               transition={{ duration: 0.3 }}
+            >
+               {children}
+            </motion.div>
+         </AnimatePresence>
+      </>
+   );
+};

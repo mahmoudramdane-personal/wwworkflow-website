@@ -17,71 +17,71 @@ const TrustUs = () => {
          <div className="w-full px-4">
          <h1 className="text-5xl text-center font-extrabold font-eb mb-4 pb-20 text-black">Ils nous ont fait confiance</h1>
           
-           <div className="flex flex-wrap items-center justify-center">
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={almaxyra}
-                  alt="Almaxyra"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={orangeAtelier}
-                  alt="Orange Atelier"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={iaac}
-                  alt="IAAC"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={olivium}
-                  alt="Olivium"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={artCom}
-                  alt="ArtCom"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={hdeuxa}
-                  alt="H2A"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-              <a 
-                className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-              >
-                <Image
-                  src={holmarcom}
-                  alt="Holmarcom"
-                  className="h-16 w-auto object-contain"
-                />
-              </a>
-           </div>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={almaxyra}
+                   alt="Almaxyra"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={orangeAtelier}
+                   alt="Orange Atelier"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={iaac}
+                   alt="IAAC"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={olivium}
+                   alt="Olivium"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={artCom}
+                   alt="ArtCom"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={hdeuxa}
+                   alt="H2A"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+               <a 
+                 className="flex w-[120px] md:w-[150px] items-center justify-center py-4 md:py-5 min-h-[80px]"
+               >
+                 <Image
+                   src={holmarcom}
+                   alt="Holmarcom"
+                   className="h-12 md:h-16 w-auto object-contain"
+                 />
+               </a>
+            </div>
          </div>
        </div>
      </div>

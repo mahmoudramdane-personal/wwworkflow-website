@@ -12,8 +12,8 @@ const Course = ({ course }) => {
     <div className="w-full md:w-1/2 lg:w-1/3 px-4">
       <div className="max-w-[370px] border border-white bg-white mx-auto  mb-10">
         <div className="overflow-hidden mb-3">
-          <img src={course.titleImage} alt="image" className="w-full"
-          />
+           <img src={course.titleImage} alt={course.courseTitle} className="w-full h-48 object-cover"
+          loading="lazy" />
         </div>
         <div className="p-5" >
           <h3>

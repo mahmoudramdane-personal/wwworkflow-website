@@ -4,6 +4,7 @@ import CoursesSection from '../components/CoursesSection';
 import CourseList from '../components/CourseList';
 import Testimonials from '../components/Testimonials';
 import TrustUs from '../components/TrustUs';
+import FAQSection from '../components/FAQSection';
 import { PageWrapper } from '../utils/page-wrapper';
 
 
@@ -11,18 +12,20 @@ export default function Home({ courses, hero, courseInfo }) {
   return (
     <div className="">
       <Head>
-        <title>AWF</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-        <meta name='description' content='' />
-        <meta property="og:title" content="WorkFlow" />
+        <title>Afterwork Workflow | Formation en Conception Paramétrique</title>
+        <meta name="description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle. Apprenez Rhinoceros et Grasshopper avec des experts." />
+        <meta property="og:title" content="Afterwork Workflow | Formation en Conception Paramétrique" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
-        <meta property="og:description"
-          content="" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="WorkFlow" />
+        <meta property="og:url" content="https://www.wwworkflows.com" />
+        <meta property="og:image" content="https://www.wwworkflows.com/og-image.jpg" />
+        <meta property="og:description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle." />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:site_name" content="Afterwork Workflow" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Afterwork Workflow | Formation en Conception Paramétrique" />
+        <meta name="twitter:description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle." />
+        <meta name="twitter:image" content="https://www.wwworkflows.com/og-image.jpg" />
+        <link rel="canonical" href="https://www.wwworkflows.com" />
       </Head>
       <PageWrapper>
         <Hero hero={hero} />
@@ -33,6 +36,7 @@ export default function Home({ courses, hero, courseInfo }) {
           <CourseList courses={courses} />
         </div>
         <TrustUs />
+        <FAQSection />
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-4xl text-3xl font-bold font-eb mb-4 text-black">Prêt à commencer votre apprentissage ?</h1>
