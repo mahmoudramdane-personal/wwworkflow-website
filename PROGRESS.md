@@ -91,6 +91,17 @@
 - Upgraded to Next.js 14.2.0
 - Added Vercel Analytics
 
+#### Bug Fix
+- **Commit:** `fbf80ce`
+- **Description:** Fix build error - remove unused imports
+- **Status:** ✅ **FIXED**
+
+**Issue:** Build failed due to missing `react-awesome-reveal` package
+**Solution:** Removed unused imports from Testimonials component:
+- `react-awesome-reveal`
+- `@emotion/react` (keyframes)
+- `gsap` and `ScrollTrigger`
+
 ---
 
 ### February 11, 2026
@@ -151,6 +162,7 @@
 | No SEO metadata | Feb 12, 2026 | Added meta descriptions, sitemap.xml, robots.txt |
 | Accessibility issues | Feb 12, 2026 | Added skip links, ARIA labels, semantic HTML |
 | Heavy animations | Feb 12, 2026 | Added useReducedMotion support |
+| Build error - missing package | Feb 12, 2026 | Removed unused imports from Testimonials.js |
 
 ### Active
 
