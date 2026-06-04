@@ -53,6 +53,11 @@ const Nav = () => {
                 <a className="block py-2 pl-3 pr-4 text-black rounded  md:text-black md:p-0">Blog</a>
               </button>
             </li>
+            <li>
+              <Link href="/contact" passHref>
+                <a className="block py-2 pl-3 pr-4 text-black rounded  md:text-black md:p-0">Contact</a>
+              </Link>
+            </li>
             
 
           </ul>

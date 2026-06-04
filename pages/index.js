@@ -16,16 +16,47 @@ export default function Home({ courses, hero, courseInfo }) {
         <meta name="description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle. Apprenez Rhinoceros et Grasshopper avec des experts." />
         <meta property="og:title" content="Afterwork Workflow | Formation en Conception Paramétrique" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.wwworkflows.com" />
-        <meta property="og:image" content="https://www.wwworkflows.com/og-image.jpg" />
+        <meta property="og:url" content="https://afterworkworkflow.com" />
+        <meta property="og:image" content="https://afterworkworkflow.com/og-image.jpg" />
         <meta property="og:description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle." />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:site_name" content="Afterwork Workflow" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Afterwork Workflow | Formation en Conception Paramétrique" />
         <meta name="twitter:description" content="Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle." />
-        <meta name="twitter:image" content="https://www.wwworkflows.com/og-image.jpg" />
-        <link rel="canonical" href="https://www.wwworkflows.com" />
+        <meta name="twitter:image" content="https://afterworkworkflow.com/og-image.jpg" />
+        <link rel="canonical" href="https://afterworkworkflow.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "EducationalOrganization",
+              "name": "Afterwork Workflow",
+              "url": "https://afterworkworkflow.com",
+              "description": "Plateforme éducative pour professionnels axée sur la conception paramétrique et computationnelle.",
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "WWWORKFLOWS",
+                "url": "https://www.wwworkflows.com"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+212-623-633-222",
+                "contactType": "customer service",
+                "email": "mahmoud@wwworkflows.com",
+                "areaServed": "MA",
+                "availableLanguage": ["French", "English", "Arabic"]
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/afterworkworkflow",
+                "https://twitter.com/rmdnmd",
+                "https://www.instagram.com/afterwork.workflow/",
+                "https://www.youtube.com/@afterworkworkflow"
+              ]
+            })
+          }}
+        />
       </Head>
       <PageWrapper>
         <Hero hero={hero} />
