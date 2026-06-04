@@ -2,9 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images:{
-    domains: ['fakestoreapi.com', 'source.unsplash.com', 'picsum.photos', 'dummyimage.com']
-  }
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'fakestoreapi.com' },
+      { protocol: 'https', hostname: 'source.unsplash.com' },
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'dummyimage.com' },
+    ],
+  },
 }
 
 module.exports = nextConfig
