@@ -49,8 +49,8 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <button href="/blog" onClick={()=>handleClick("blog")} passHref>
-                <a className="block py-2 pl-3 pr-4 text-black rounded  md:text-black md:p-0">Blog</a>
+              <button href="/articles" onClick={()=>handleClick("articles")} passHref>
+                <a className="block py-2 pl-3 pr-4 text-black rounded  md:text-black md:p-0">Articles</a>
               </button>
             </li>
             <li>
