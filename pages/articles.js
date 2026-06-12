@@ -69,7 +69,7 @@ export default function ArticlesPage({ articles }) {
 
       <style>{`
         .articles-page-root {
-          background-color: #fafaf7;
+          background-color: #fafaf7 !important;
           min-height: 100vh;
           font-family: Inter, -apple-system, system-ui, sans-serif;
           color: #1a1a1a;

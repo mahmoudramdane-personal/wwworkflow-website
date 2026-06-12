@@ -54,10 +54,13 @@ function ArticlePage({ article }) {
 
       <style>{`
         .article-detail-page {
-          background-color: #fafaf7;
+          background-color: #fafaf7 !important;
           min-height: 100vh;
           font-family: Inter, -apple-system, system-ui, sans-serif;
           color: #1a1a1a;
+        }
+        #main-content {
+          background-color: #fafaf7 !important;
         }
         .article-detail-inner {
           max-width: 720px;
