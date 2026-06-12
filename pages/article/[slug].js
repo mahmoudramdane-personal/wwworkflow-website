@@ -7,21 +7,17 @@ import remarkGfm from "remark-gfm";
 
 export async function getStaticPaths() {
   const articles = await getArticles();
-
   const paths = articles.map((a) => ({
     params: { slug: a.slug },
   }));
-
   return { paths, fallback: "blocking" };
 }
 
 export async function getStaticProps({ params }) {
   const article = await getArticleBySlug(params.slug);
-
   if (!article) {
     return { notFound: true };
   }
-
   return {
     props: { article },
     revalidate: 60,
@@ -50,80 +46,187 @@ function ArticlePage({ article }) {
           rel="canonical"
           href={`https://www.afterworkworkflow.com/article/${article.slug}`}
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <div className="bg-white min-h-screen">
-        <div className="max-w-[900px] mx-auto px-6 md:px-12">
-          {/* Back navigation */}
-          <div className="pt-8">
+      <style>{`
+        .article-detail-page {
+          background-color: #fafaf7;
+          min-height: 100vh;
+          font-family: Inter, -apple-system, system-ui, sans-serif;
+          color: #1a1a1a;
+        }
+        .article-detail-inner {
+          max-width: 720px;
+          margin: 0 auto;
+          padding: 3rem 1.5rem 4rem;
+        }
+        .article-detail-inner a {
+          color: #b25340;
+          text-decoration: underline;
+        }
+        .article-detail-inner h2 {
+          font-size: 1.35rem;
+          font-weight: 600;
+          margin: 2rem 0 1rem;
+          line-height: 1.3;
+          color: #1a1a1a;
+        }
+        .article-detail-inner p {
+          margin-bottom: 1.2rem;
+          color: #1a1a1a;
+        }
+        .article-detail-inner ul,
+        .article-detail-inner ol {
+          margin-bottom: 1.2rem;
+          padding-left: 1.5rem;
+        }
+        .article-detail-inner li {
+          margin-bottom: 0.4rem;
+        }
+        .article-detail-inner blockquote {
+          border-left: 3px solid #b25340;
+          padding-left: 1rem;
+          color: #666;
+          font-style: italic;
+          margin: 1.5rem 0;
+        }
+        .article-detail-inner img {
+          max-width: 100%;
+          border-radius: 6px;
+          margin: 1.5rem 0;
+          display: block;
+        }
+        .article-detail-inner code {
+          background: rgba(0, 0, 0, 0.04);
+          padding: 0.15rem 0.4rem;
+          border-radius: 4px;
+          font-family: JetBrains Mono, monospace;
+          font-size: 0.9em;
+        }
+        .article-detail-inner pre {
+          background: rgba(0, 0, 0, 0.04);
+          padding: 1rem;
+          border-radius: 8px;
+          overflow-x: auto;
+          margin: 1.5rem 0;
+        }
+        .article-detail-inner hr {
+          border: none;
+          border-top: 1px solid rgba(0,0,0,0.08);
+          margin: 2rem 0;
+        }
+        @media (max-width: 600px) {
+          .article-detail-inner {
+            padding: 2rem 1rem 3rem;
+          }
+        }
+      `}</style>
+
+      <div className="article-detail-page">
+        <div className="article-detail-inner">
+          {/* Back link */}
+          <div style={{ marginBottom: "1.5rem" }}>
             <Link
               href="/articles"
-              className="font-alt text-black/40 text-xs tracking-[0.12em] uppercase hover:text-black transition-colors duration-300"
+              style={{
+                background: "rgba(0,0,0,0.04)",
+                color: "#1a1a1a",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.3rem",
+                padding: "0.5rem 1rem",
+                borderRadius: "6px",
+                fontSize: "0.8rem",
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
             >
-              &larr; Retour aux articles
+              ← Back to Articles
             </Link>
           </div>
 
-          {/* Title section */}
-          <section className="pt-12 pb-8 md:pt-16 md:pb-12">
-            <div className="flex items-center gap-3 mb-4">
-              {article.category && (
-                <span className="font-alt text-xs tracking-[0.12em] uppercase text-black/40">
-                  {article.category}
-                </span>
-              )}
-              <span className="font-alt text-xs tracking-[0.1em] text-black/30">
-                {formattedDate}
-              </span>
-            </div>
-            <h1 className="font-eb text-3xl md:text-5xl font-bold text-black leading-tight">
-              {article.title}
-            </h1>
-            <p className="mt-4 font-alt text-black/50 text-lg md:text-xl leading-relaxed">
-              {article.excerpt}
-            </p>
-          </section>
+          {/* Meta */}
+          <div
+            style={{
+              fontSize: "0.85rem",
+              color: "#666",
+              marginBottom: "0.5rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.06em",
+            }}
+          >
+            {article.category} &middot; {formattedDate}
+          </div>
+
+          {/* Title */}
+          <h1
+            style={{
+              fontSize: "clamp(1.8rem, 5vw, 2.6rem)",
+              lineHeight: 1.15,
+              fontWeight: 700,
+              marginBottom: "0.8rem",
+              color: "#1a1a1a",
+            }}
+          >
+            {article.title}
+          </h1>
+
+          {/* Excerpt */}
+          <p
+            style={{
+              fontSize: "1.1rem",
+              color: "#666",
+              marginBottom: "2rem",
+              lineHeight: 1.55,
+            }}
+          >
+            {article.excerpt}
+          </p>
 
           {/* Hero image */}
           {article.thumbnail && (
-            <section className="mb-12">
-              <div className="relative w-full aspect-[16/9] overflow-hidden bg-cgrey">
-                <img
-                  src={article.thumbnail}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </section>
+            <img
+              src={article.thumbnail}
+              alt={article.title}
+              style={{
+                width: "100%",
+                aspectRatio: "16 / 9",
+                objectFit: "cover",
+                borderRadius: "8px",
+                marginBottom: "2.5rem",
+                background: "#eee",
+              }}
+            />
           )}
 
           {/* Body content */}
-          <section className="mb-16">
-            <article className="prose prose-lg max-w-none font-alt text-black/80
-              prose-headings:font-eb prose-headings:text-black prose-headings:font-bold
-              prose-h1:text-4xl prose-h2:text-2xl
-              prose-a:text-blue prose-a:no-underline hover:prose-a:underline
-              prose-img:w-full prose-img:rounded-lg prose-img:my-8
-              prose-blockquote:border-l-black/20 prose-blockquote:text-black/60 prose-blockquote:italic
-              prose-code:text-black/70 prose-code:bg-cgrey prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-              prose-pre:bg-black prose-pre:text-white
-              prose-strong:text-black
-              prose-hr:border-black/10">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {article.body}
-              </ReactMarkdown>
-            </article>
-          </section>
+          <div>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {article.body}
+            </ReactMarkdown>
+          </div>
 
-          {/* Back to articles */}
-          <section className="border-t border-black/10 py-12 text-center">
+          {/* Footer */}
+          <div
+            style={{
+              borderTop: "1px solid rgba(0,0,0,0.08)",
+              marginTop: "3rem",
+              paddingTop: "1.5rem",
+              fontSize: "0.8rem",
+              color: "#999",
+            }}
+          >
             <Link
               href="/articles"
-              className="font-alt text-black/40 text-xs tracking-[0.12em] uppercase hover:text-black transition-colors duration-300"
+              style={{ color: "#999", textDecoration: "underline" }}
             >
-              Voir tous les articles &rarr;
+              Voir tous les articles
             </Link>
-          </section>
+          </div>
         </div>
       </div>
     </>

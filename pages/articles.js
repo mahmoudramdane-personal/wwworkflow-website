@@ -21,40 +21,26 @@ function ArticleCard({ article }) {
   });
 
   return (
-    <Link href={`/article/${article.slug}`} className="group block">
-      <div className="w-full mb-4">
+    <Link href={`/article/${article.slug}`} className="article-card">
+      <div className="article-card-inner">
         {/* Thumbnail */}
-        <div className="relative w-full aspect-[16/10] overflow-hidden bg-cgrey mb-4">
-          {article.thumbnail && (
-            <img
-              src={article.thumbnail}
-              alt={article.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          )}
-        </div>
+        {article.thumbnail && (
+          <div className="article-card-thumb">
+            <img src={article.thumbnail} alt={article.title} />
+          </div>
+        )}
 
         {/* Meta */}
-        <div className="flex items-center gap-3 mb-2">
-          {article.category && (
-            <span className="text-[10px] tracking-[0.15em] uppercase text-black/40 font-alt">
-              {article.category}
-            </span>
-          )}
-          <span className="text-[10px] tracking-[0.1em] text-black/30 font-alt">
-            {formattedDate}
-          </span>
+        <div className="article-card-meta">
+          {article.category && <span>{article.category}</span>}
+          <span>{formattedDate}</span>
         </div>
 
         {/* Title */}
-        <h2 className="text-lg font-medium font-eb text-black leading-snug mb-1.5 group-hover:opacity-60 transition-opacity duration-300">
-          {article.title}
-        </h2>
+        <h2 className="article-card-title">{article.title}</h2>
 
         {/* Excerpt */}
-        <p className="text-sm font-alt text-black/50 leading-relaxed line-clamp-3">
-          {article.excerpt}
-        </p>
+        <p className="article-card-excerpt">{article.excerpt}</p>
       </div>
     </Link>
   );
@@ -75,33 +61,135 @@ export default function ArticlesPage({ articles }) {
           content="Articles sur l'architecture paramétrique et le Computational Design."
         />
         <link rel="canonical" href="https://www.afterworkworkflow.com/articles" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <PageWrapper>
-        <section className="pt-24 pb-16 md:pt-32 md:pb-20 px-6 md:px-12 max-w-[1200px] mx-auto">
-          <div className="max-w-xl mb-12">
-            <h1 className="font-eb text-4xl md:text-5xl font-bold text-black leading-tight mb-4">
-              Articles
-            </h1>
-            <p className="font-alt text-base text-black/50 leading-relaxed">
-              Réflexions sur le Computational Design, l&apos;architecture
-              paramétrique et les workflows numériques.
-            </p>
-          </div>
+      <style>{`
+        .articles-page-root {
+          background-color: #fafaf7;
+          min-height: 100vh;
+          font-family: Inter, -apple-system, system-ui, sans-serif;
+          color: #1a1a1a;
+        }
+        .articles-page {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 3rem 1.5rem 4rem;
+        }
+        .articles-header {
+          margin-bottom: 3rem;
+        }
+        .articles-header h1 {
+          font-size: clamp(1.8rem, 5vw, 2.6rem);
+          line-height: 1.15;
+          font-weight: 700;
+          margin-bottom: 0.8rem;
+          color: #1a1a1a;
+        }
+        .articles-subtitle {
+          font-size: 1.1rem;
+          color: #666;
+          line-height: 1.55;
+          max-width: 540px;
+        }
+        .articles-empty {
+          color: #666;
+          text-align: center;
+          padding: 4rem 0;
+        }
+        .articles-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 2rem;
+        }
+        .article-card {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          transition: opacity 0.2s;
+        }
+        .article-card:hover {
+          opacity: 0.75;
+        }
+        .article-card-inner {
+          display: flex;
+          flex-direction: column;
+        }
+        .article-card-thumb {
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          overflow: hidden;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          background: #eee;
+        }
+        .article-card-thumb img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .article-card-meta {
+          display: flex;
+          gap: 0.75rem;
+          margin-bottom: 0.5rem;
+          font-size: 0.8rem;
+          color: #666;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+        }
+        .article-card-title {
+          font-size: 1.15rem;
+          font-weight: 600;
+          line-height: 1.3;
+          margin-bottom: 0.4rem;
+          color: #1a1a1a;
+        }
+        .article-card-excerpt {
+          font-size: 0.9rem;
+          color: #666;
+          line-height: 1.55;
+        }
+        @media (max-width: 600px) {
+          .articles-page {
+            padding: 2rem 1rem 3rem;
+          }
+          .articles-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+        }
+      `}</style>
 
-          {articles.length === 0 ? (
-            <p className="font-alt text-black/40 text-center py-20">
-              Aucun article pour le moment. Revenez bientôt.
-            </p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
-              ))}
-            </div>
-          )}
-        </section>
-      </PageWrapper>
+      <div className="articles-page-root">
+        <PageWrapper>
+          <div className="articles-page">
+            {/* Header */}
+            <section className="articles-header">
+              <h1>Articles</h1>
+              <p className="articles-subtitle">
+                Réflexions sur le Computational Design, l&apos;architecture
+                paramétrique et les workflows numériques.
+              </p>
+            </section>
+
+            {/* Grid */}
+            {articles.length === 0 ? (
+              <p className="articles-empty">
+                Aucun article pour le moment. Revenez bientôt.
+              </p>
+            ) : (
+              <div className="articles-grid">
+                {articles.map((article) => (
+                  <ArticleCard key={article.slug} article={article} />
+                ))}
+              </div>
+            )}
+          </div>
+        </PageWrapper>
+      </div>
     </>
   );
 }
