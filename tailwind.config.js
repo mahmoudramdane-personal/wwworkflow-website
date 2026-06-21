@@ -11,11 +11,20 @@ module.exports = {
       yellow: '#F5F588',
       red: '#E01E5A',
       green:' #9AFCC2',
-      black: '#231F20',
-      gray: '#505050',
+      black: '#171717',
+      gray: '#737373',
       cgrey: '#F1F1F1',
       white: '#FFF',
-      cgray:"#8B94A3"
+      cgray:"#8B94A3",
+      neutral: {
+        900: '#171717',
+        700: '#404040',
+        500: '#737373',
+        400: '#A3A3A3',
+        300: '#D4D4D4',
+        200: '#E5E5E5',
+        100: '#F5F5F5',
+      },
     },
     extend:{
       backgroundImage: {
